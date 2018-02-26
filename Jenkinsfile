@@ -12,7 +12,7 @@ pipeline {
         }
         stage('error') {
           steps {
-            sh 'mv XshellPortable.rar; /tmp/newlr.tar'
+            sh 'cp XshellPortable.rar /tmp/newlr.tar'
           }
         }
       }
