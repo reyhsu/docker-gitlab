@@ -6,7 +6,7 @@ pipeline {
     stage('deploy') {
       steps {
         echo 'Start Pull And Push Images'
-        sh 'echo ababwer >> new.txt; cp new.txt sec.txt'
+        sh 'echo ababwer >> /new.txt; cp /new.txt /sec.txt'
       }
     }
   }
