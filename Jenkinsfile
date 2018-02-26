@@ -10,9 +10,14 @@ pipeline {
             archiveArtifacts 'XshellPortable.rar'
           }
         }
-        stage('error') {
+        stage('stage2') {
           steps {
             sh 'cp XshellPortable.rar /tmp/newlr.tar'
+          }
+        }
+        stage('ssh ') {
+          steps {
+            sh 'ssh 192.168.152.17'
           }
         }
       }
