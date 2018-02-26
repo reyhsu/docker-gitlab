@@ -10,9 +10,9 @@ pipeline {
             archiveArtifacts 'XshellPortable.rar'
           }
         }
-        stage('') {
+        stage('error') {
           steps {
-            sh 'cp XshellPortable.rar; /tmp/newlr.tar'
+            sh 'mkdir /tmp; cp XshellPortable.rar; /tmp/newlr.tar'
           }
         }
       }
