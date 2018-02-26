@@ -11,9 +11,9 @@ pipeline {
             sh 'id; pwd'
           }
         }
-        stage('') {
+        stage('error') {
           steps {
-            sh 'ls -al'
+            sh 'cd ~; ls -al'
           }
         }
       }
