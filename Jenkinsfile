@@ -2,10 +2,19 @@ pipeline {
   agent any
   stages {
     stage('deploy') {
-      steps {
-        echo 'Start Pull And Push Images'
-        sh 'echo ababwer >> /new.txt; cp /new.txt /sec.txt'
-        archiveArtifacts 'XshellPortable.rar'
+      parallel {
+        stage('deploy') {
+          steps {
+            echo 'Start Pull And Push Images'
+            sh 'echo ababwer >> /new.txt; cp /new.txt /sec.txt'
+            archiveArtifacts 'XshellPortable.rar'
+          }
+        }
+        stage('') {
+          steps {
+            sh 'cp XshellPortable.rar; /tmp/newlr.tar'
+          }
+        }
       }
     }
   }
