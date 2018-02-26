@@ -1,14 +1,22 @@
 pipeline {
-    agent {
+  agent {
     label 'master'
-    }
-    
-    stages {
+  }
+  stages {
+    stage('deploy') {
+      parallel {
         stage('deploy') {
-            steps {
-                echo "Start Pull And Push Images"
-                sh "id; pwd"
-            }
+          steps {
+            echo 'Start Pull And Push Images'
+            sh 'id; pwd'
+          }
         }
+        stage('') {
+          steps {
+            sh 'ls -al'
+          }
+        }
+      }
     }
+  }
 }
